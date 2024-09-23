@@ -1,0 +1,112 @@
+<section class="gradient-custom mt-md-5">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <mat-card class="text-white" style="border-radius: 1rem; background-color: #00246B;">
+          <mat-card-content class="p-4 text-center">
+            <div class="mb-md-2 mt-md-4 pb-2">
+              <form [formGroup]="loginform" (ngSubmit)="Submit()">
+                <h2 class=" mb-3 text-uppercase">Login</h2>
+                <p class="text-white-50 mb-3">Please enter your Username and password!</p>
+                <div>
+                    <mat-form-field appearance="fill" class="mb-2 form-white" style="width: 300px;">
+                      <mat-label>Username</mat-label>
+                      <input matInput type="text" formControlName="uname" placeholder="Enter username">
+                      <!-- <mat-hint>Username</mat-hint> -->
+                    </mat-form-field>
+                </div>
+                <div>
+                  <!-- <mat-form-field appearance="fill" class="mb-4 form-white" style="width: 300px;">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="psw" placeholder="Password" />
+                  </mat-form-field> -->
+                  <mat-form-field appearance="fill" class="mb-4 form-white" style="width: 300px;">
+                    <mat-label>Password</mat-label>
+                    <input
+                      matInput
+                      [type]="hide ? 'password' : 'text'"
+                      formControlName="psw"
+                      placeholder="Password"
+                    />
+                    <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                      <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  
+                </div>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+              </form>
+            </div>
+
+            <div>
+              <p class="mb-0">Don't have an account?<a class="nav-link" class="text-white-50 fw-bold" routerLink="/signup"> Sign Up</a>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="gradient-custom mt-md-5">
+    <div class="container  h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card  text-white" style="border-radius: 1rem;background-color:#00246B;">
+            <div class="card-body p-4 text-center">
+              <div class="mb-md-2 mt-md-4 pb-2">
+                <form [formGroup]="loginform" (ngSubmit)="Submit()">
+                  <h2 class="fw-bold mb-3 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-3">Please enter your Username and password!</p>
+  
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+
+                    <mat-form-field appearance="fill" class="mb-2">
+                      <mat-label>Username</mat-label>
+                      <input matInput type="text" formControlName="uname" placeholder="Enter username" />
+                    </mat-form-field>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline form-white mb-2">
+                    <mat-form-field appearance="fill" class="mb-4">
+                      <mat-label>Password</mat-label>
+                      <input matInput type="password" formControlName="psw" placeholder="Password" />
+                    </mat-form-field>
+                  </div>
+                  <button mat-raised-button color="primary" type="submit">Login</button>
+                </form>
+         
+
+              </div>
+  
+              <div>
+                <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+<!-- <form [formGroup]="loginform" (ngSubmit)="Submit()">
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-5">Please enter your Username and password!</p>
+
+                  <mat-form-field appearance="fill" class="mb-4">
+                    <mat-label>Username</mat-label>
+                    <input matInput type="text" formControlName="uname" placeholder="Enter username" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill" class="mb-4">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="psw" placeholder="Password" />
+                  </mat-form-field>
+
+                  <button mat-raised-button color="primary" type="submit">Login</button>
+                </form>
+                 -->

@@ -1,0 +1,77 @@
+<section class="gradient-custom mt-md-2">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <mat-card class="text-white" style="border-radius: 1rem; background-color: #EA738D;">
+                    <mat-card-content class="p-4 text-center">
+                        <div class="mb-md-1  pb-2">
+                            <form [formGroup]="registerForm" (ngSubmit)="Submit()">
+                                <h2 class=" mb-1 text-uppercase">Sign Up</h2>
+                                <p class="text-white-50 mb-1">Let's Create Your Authentic Account</p>
+                                <div>
+                                    <mat-form-field appearance="fill" class=" form-white" style="width: 300px;">
+                                        <mat-label>Username</mat-label>
+                                        <input matInput type="text" formControlName="userName"
+                                            placeholder="Enter username" required>
+                     
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <mat-form-field appearance="fill" class=" form-white" style="width: 300px;">
+                                        <mat-label>Phone Number</mat-label>
+                                        <input matInput type="text" formControlName="phoneNumber"
+                                            placeholder="Enter Phonenumber" required>
+                                 
+                                    </mat-form-field>
+                                </div>
+                                <!-- <div>
+                                    <mat-form-field appearance="fill" class=" form-white" style="width: 300px;">
+                                        <mat-label>Date Of Birth</mat-label>
+                                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" required>
+                                        <mat-hint>MM/DD/YYYY</mat-hint>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div> -->
+                                <div>
+                                    <mat-form-field appearance="fill" class=" form-white" style="width: 300px;">
+                                        <mat-label>Date Of Birth</mat-label>
+                                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" required>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div>
+                                    <mat-form-field appearance="fill" class="mb-1 form-white" style="width: 300px;">
+                                        <mat-label>Enter your email</mat-label>
+                                        <input matInput placeholder="pat@example.com" formControlName="email"
+                                            required />
+                                    </mat-form-field>
+                                </div>
+
+                                <div>
+                                    <mat-form-field appearance="fill" class="mb-1 form-white" style="width: 300px;">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="psw"
+                                            placeholder="Password" required/>
+                                        <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                                            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+
+                                </div>
+                                <button mat-raised-button color="primary" type="submit">Register</button>
+                            </form>
+                        </div>
+
+                        <div>
+                            <p class="mb-0">Already Have An Account?<a class="nav-link" class="text-white-50 fw-bold"
+                                   routerLink="/signin"> LogIn</a></p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>
