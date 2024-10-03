@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { LayoutComponent } from '../layout/layout.component';
+import { LayoutComponent } from '../userLayout/layout.component';
 import { AuthenticationServiceService } from '../../serivces/authentication-service.service';
 import { SharedService } from '../../serivces/shared.service';
 import { UIHelperService } from '../../shared/helpers/u-i-helper.service';
@@ -11,6 +11,7 @@ import { Response } from '../../shared/models/responses/response.model';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../shared/modules/material.module';
 import { RouterModule } from '@angular/router';
+import { SessionHelper } from '../../shared/helpers/session-helper';
 
 @Component({
   selector: 'app-login',
@@ -61,8 +62,12 @@ export class LoginComponent {
             //   if (result.isConfirmed) {
                 this._authenticationService.storeToken(val.message);
                 //this._router.navigate(['/product-details']);
-                this._router.navigate(['/user-details']);
+                //this._router.navigate(['/user-details']);
+
                 this.sharedService.triggerChild2Function();
+                console.log(SessionHelper.getRole())
+                this._router.navigate([`/${SessionHelper.getRole()}`]); 
+                //this._router.navigate([`/${'User'}`]); 
                 //   this._router.navigateByUrl('/layout', { skipLocationChange: true }).then(() => {
                 //     this._router.navigate(['/product-details']);
                 // }); 

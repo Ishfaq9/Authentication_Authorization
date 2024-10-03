@@ -31,7 +31,7 @@ export class RegisterComponent {
       phoneNumber: ['01912120037'],
       dateOfBirth: ['2024-08-31'],
       email: ['ishfaq.rahman9@gmail.com'],
-      psw: ['Ish1234271@1'],
+      psw: ['Ish1234271@'],
     });
   }
 
@@ -68,11 +68,11 @@ export class RegisterComponent {
           } else {
             this.uihelperservice.SwalMessageError(val.status, val.message);
             this.registerForm = this.fb.group({
-              userName: [''],
-              phoneNumber: [''],
-              dateOfBirth: [''],
-              email: [''],
-              psw: [''],
+              userName: ['Ishfaq'],
+              phoneNumber: ['01912120037'],
+              dateOfBirth: ['2024-08-31'],
+              email: ['ishfaq.rahman9@gmail.com'],
+              psw: ['Ish1234271@'],
             });
           }
         }, error: (error: any) => {
